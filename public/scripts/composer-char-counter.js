@@ -10,11 +10,12 @@ $(document).ready(function() {
    
     // adds removes class that changes color of counter
     if (inputVal.length > 140) {
-      counter.addClass("negative-counter")
+      counter.addClass("negative-counter");
     }
     if (inputVal.length <= 140 && counter.hasClass('negative-counter')) {
-      counter.removeClass("negative-counter")
+      counter.removeClass("negative-counter");
     }
   })
 
 });
+

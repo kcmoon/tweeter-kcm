@@ -6,13 +6,17 @@
   margin-top: 30px;
 }
 
+.tweet-container:hover {
+  box-shadow: 5px 5px 5px green;
+}
+
 #header-div {
   display: flex;
   flex-direction: row;
 }
 
 #user-image {
-  border: 1px solid #ddd;
+  border: 1px null #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 100px;
@@ -23,6 +27,7 @@ article {
   border-left: null;
   border-right: null;
   border-bottom: 5px solid black;
+  font-weight: bold;
 }
 
 footer {
@@ -36,4 +41,8 @@ footer {
 
 .fa-solid {
   color: black;
+}
+
+.tweet-container i:hover {
+  color: pink;
 }

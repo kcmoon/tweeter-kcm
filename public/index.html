@@ -38,7 +38,7 @@
     <span>tweeter</span>
     <div class="nav-container">
       <text><b>WRITE</b> a new tweet</text>
-      <i class="fa-solid fa-angles-down"></i>
+      <i class="fa-solid fa-angles-down" id="arrows"></i>
     </div>
   </nav>
 
@@ -53,7 +53,7 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="new-tweet-container">
+  <main class="tweet-container">
     <section class="new-tweet">
       <!-- <h2>Compose Tweet</h2> -->
       <form method="POST" action="/tweets">
@@ -64,25 +64,7 @@
         </div>
       </form>
     </section>
-    <section class="tweet-container">
-        <header class="tweet-container-header">
-          <div id="header-div">
-            <img id="user-image" src="/images/tweet-example.png">
-            <p name="user" id="user">KMoon</p>
-          </div>
-          <p name="handle" id="handle">@kcmoon</p>
-        </header>
-        <article>
-          <p>This is just filler for an example.</p>
-        </article>
-        <footer>
-          <p name="posted-time" id="posted-time">2 hours ago</p>
-          <div class="icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
+    <section id="tweet-container">
     </section>
   </main>
 </body>

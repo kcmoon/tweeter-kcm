@@ -1,4 +1,4 @@
-.new-tweet-container {
+.tweet-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,8 +30,8 @@ button {
   color: #ff0000;
 }
 
-textarea {
-  width: 500px;
+#tweet-text {
+  width: 750px;
   outline: none;
   background: none;
   border-top: none;

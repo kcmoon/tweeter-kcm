@@ -26,6 +26,10 @@ button {
   font-family: 'Bungee', 'sans-serif';
 }
 
+.negative-counter {
+  color: #ff0000;
+}
+
 textarea {
   width: 500px;
   outline: none;

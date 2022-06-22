@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,7 +42,7 @@
     </div>
   </nav>
 
-  <header>
+  <header id="avatar-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -63,7 +64,26 @@
         </div>
       </form>
     </section>
-    <section class="tweet-container"></section>
+    <section class="tweet-container">
+        <header class="tweet-container-header">
+          <div id="header-div">
+            <img id="user-image" src="/images/tweet-example.png">
+            <p name="user" class="user">KMoon</p>
+          </div>
+          <p name="handle" id="handle">@kcmoon</p>
+        </header>
+        <article>
+          <p>This is just filler for an example.</p>
+        </article>
+        <footer>
+          <p name="posted-time" id="posted-time">2 hours ago</p>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+    </section>
   </main>
 </body>
 

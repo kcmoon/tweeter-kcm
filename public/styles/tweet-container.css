@@ -1,0 +1,39 @@
+.tweet-container-header {
+  display: flex;
+  width: 500px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+#header-div {
+  display: flex;
+  flex-direction: row;
+}
+
+#user-image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100px;
+}
+
+article {
+  border-top: null;
+  border-left: null;
+  border-right: null;
+  border-bottom: 5px solid black;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#posted-time {
+  margin: 2px;
+}
+
+.fa-solid {
+  color: black;
+}

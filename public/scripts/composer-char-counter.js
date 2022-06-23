@@ -6,7 +6,7 @@ $(document).ready(function() {
     // tracks the character count of the new tweet
     const inputVal = $(this).val();
 
-    counter.text(140-inputVal.length);
+    counter.text(140 - inputVal.length);
    
     // adds removes class that changes color of counter
     if (inputVal.length > 140) {
@@ -15,7 +15,7 @@ $(document).ready(function() {
     if (inputVal.length <= 140 && counter.hasClass('negative-counter')) {
       counter.removeClass("negative-counter");
     }
-  })
+  });
 
 });
 

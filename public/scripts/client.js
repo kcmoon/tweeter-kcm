@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -13,10 +13,10 @@ const escape = function (str) {
 const errorMessage = function(text) {
   let slideDownErr = `<div id="error">${text}</div>`;
   $('.tweet-container').prepend(slideDownErr).hide().slideDown();
-}
+};
 
 $(document).ready(function() {
-  // creates a new tweet article 
+  // creates a new tweet article
   const createTweetElement = function(tweetData) {
     // function to prevent XSS
     
@@ -38,10 +38,10 @@ $(document).ready(function() {
         <i class="fa-solid fa-heart"></i>
       </div>
       </footer>
-    </article>`
+    </article>`;
     
     return tweetHTML;
-  }
+  };
 
 
   // renders all tweets at bottom of page
@@ -53,7 +53,7 @@ $(document).ready(function() {
   };
 
   // stops the submit button from refreshing the page and saves data
-  $( "#post-tweet" ).submit(async function( event ) {
+  $("#post-tweet").submit(async function(event) {
     event.preventDefault();
     $('#error').slideUp();
     if ($('#tweet-text').val() === '') {
@@ -62,19 +62,19 @@ $(document).ready(function() {
     } else if ($('#tweet-text').val().length > 140) {
       errorMessage('⚠️ Invalid Tweet: Character Limit Exceeded Please try again. ⚠️');
       return false;
-    } else await $.post( "/tweets", $( "#post-tweet" ).serialize() );
+    } else await $.post("/tweets", $("#post-tweet").serialize());
     loadtweets();
     $('#tweet-text').val('');
   });
 
   const loadtweets = async function() {
     await $.ajax('/tweets', { method: 'GET' })
-    .then(function (data) {
-      console.log(data);
-      renderTweets(data);
-    })
+      .then(function(data) {
+        console.log(data);
+        renderTweets(data);
+      });
      
-  }
-  loadtweets()
+  };
+  loadtweets();
 });
 

@@ -4,55 +4,29 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape = function(str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
 
-const errorMessage = function(text) {
-  let slideDownErr = `<div id="error">${text}</div>`;
-  $('.tweet-container').prepend(slideDownErr).hide().slideDown();
-};
 
+// when page loads
 $(document).ready(function() {
-  // creates a new tweet article
-  const createTweetElement = function(tweetData) {
-    // function to prevent XSS
-    
+  loadtweets();
+  $('#post-tweet').hide();
 
-    const tweetHTML = `<article class="tweet">
-    <header class="tweet-container-header">
-      <div id="header-div">
-        <img id="user-image" src="${tweetData.user.avatars}">
-        <p name="user" id="user">${tweetData.user.name}</p>
-      </div>
-      <p name="handle" id="handle">${tweetData.user.handle}</p>
-    </header>
-    <div class="tweet-content">${escape(tweetData.content.text)}</div>
-    <footer>
-      <p name="posted-time" id="posted-time">${timeago.format(tweetData.created_at)}</p>
-      <div class="icons">
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>
-        <i class="fa-solid fa-heart"></i>
-      </div>
-      </footer>
-    </article>`;
-    
-    return tweetHTML;
-  };
-
-
-  // renders all tweets at bottom of page
-  const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('#tweet-data').prepend($tweet);
+  // changes cursor when hovering over "WRITE a new tweet"
+  $('.nav-container').on('mouseover', function() {
+    $('.nav-container').css('cursor', 'pointer');
+  })
+  
+  // creates a slide-down and slide-up feature for new tweets
+  $('.nav-container').on('click', function() {
+    if ($('#post-tweet').is(':visible')) {
+      $('#post-tweet').slideUp();
+    } else {
+      $('#post-tweet').slideDown();
+      $('#tweet-text').focus();
     }
-  };
+  })
 
-  // stops the submit button from refreshing the page and saves data
+  // stops the submit button from refreshing the page and saves data && includes slide-down error features for invalid tweets
   $("#post-tweet").submit(async function(event) {
     event.preventDefault();
     $('#error').slideUp();
@@ -65,16 +39,8 @@ $(document).ready(function() {
     } else await $.post("/tweets", $("#post-tweet").serialize());
     loadtweets();
     $('#tweet-text').val('');
+    $('.counter').text(140);
   });
 
-  const loadtweets = async function() {
-    await $.ajax('/tweets', { method: 'GET' })
-      .then(function(data) {
-        console.log(data);
-        renderTweets(data);
-      });
-     
-  };
-  loadtweets();
 });
 

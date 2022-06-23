@@ -4,16 +4,22 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+const errorMessage = function(text) {
+  let slideDownErr = `<div id="error">${text}</div>`;
+  $('.tweet-container').prepend(slideDownErr).hide().slideDown();
+}
 
 $(document).ready(function() {
   // creates a new tweet article 
   const createTweetElement = function(tweetData) {
     // function to prevent XSS
-    const escape = function (str) {
-      let div = document.createElement("div");
-      div.appendChild(document.createTextNode(str));
-      return div.innerHTML;
-    };
+    
 
     const tweetHTML = `<article class="tweet">
     <header class="tweet-container-header">
@@ -49,13 +55,14 @@ $(document).ready(function() {
   // stops the submit button from refreshing the page and saves data
   $( "#post-tweet" ).submit(async function( event ) {
     event.preventDefault();
+    $('#error').slideUp();
     if ($('#tweet-text').val() === '') {
-      return alert('Invalid Post: Post cannot be empty. Please Try Again');
-    }
-    if ($('#tweet-text').val().length > 140) {
-      return alert('Invalid Post: Character Limit Exceeded. Please Try Again');
-    }
-    await $.post( "/tweets", $( "#post-tweet" ).serialize() );
+      errorMessage('⚠️ Invalid Tweet: Tweet Must Contain Content. Please try again. ⚠️');
+      return false;
+    } else if ($('#tweet-text').val().length > 140) {
+      errorMessage('⚠️ Invalid Tweet: Character Limit Exceeded Please try again. ⚠️');
+      return false;
+    } else await $.post( "/tweets", $( "#post-tweet" ).serialize() );
     loadtweets();
     $('#tweet-text').val('');
   });

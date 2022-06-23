@@ -31,3 +31,14 @@ body {
   background-color: #f4f1ec;
   margin: 0 auto;
 }
+
+#error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  border: 3px solid red;
+  font-size: 24px;
+  width: 750px;
+  height: 75px;
+}

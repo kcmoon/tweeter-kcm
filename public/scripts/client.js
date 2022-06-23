@@ -59,4 +59,11 @@ $(document).ready(function() {
   };
 
   renderTweets(tweetsData);
+
+  $( "#post-tweet" ).submit(function( event ) {
+    console.log($( "#post-tweet" ).serialize())
+    event.preventDefault();
+    $.post( "http://localhost:8080/tweets", $( "#post-tweet" ).serialize() );
+  });
 });
+

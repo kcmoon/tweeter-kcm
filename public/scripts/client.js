@@ -14,7 +14,7 @@ $(document).ready(function() {
   // changes cursor when hovering over "WRITE a new tweet"
   $('.nav-container').on('mouseover', function() {
     $('.nav-container').css('cursor', 'pointer');
-  })
+  });
   
   // creates a slide-down and slide-up feature for new tweets
   $('.nav-container').on('click', function() {
@@ -24,7 +24,7 @@ $(document).ready(function() {
       $('#post-tweet').slideDown();
       $('#tweet-text').focus();
     }
-  })
+  });
 
   // stops the submit button from refreshing the page and saves data && includes slide-down error features for invalid tweets
   $("#post-tweet").submit(async function(event) {

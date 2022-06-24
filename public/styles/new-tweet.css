@@ -1,3 +1,4 @@
+/* Classes */
 .tweet-container {
   display: flex;
   flex-direction: column;
@@ -8,18 +9,12 @@
 
 .new-tweet {
   font-family: 'Source Sans Pro', 'sans-serif';
+  width: 20em;
 }
 
 .submit-counter {
   display: flex;
   justify-content: space-between;
-}
-
-button {
-  border: none;
-  color: white;
-  background-color: #4056A1;
-  font-family: 'Bungee', 'sans-serif';
 }
 
 .counter {
@@ -30,8 +25,9 @@ button {
   color: #ff0000;
 }
 
+/* ID's */
 #tweet-text {
-  width: 750px;
+  width: 100%;
   outline: none;
   background: none;
   border-top: none;
@@ -41,4 +37,22 @@ button {
   border-bottom: 5px solid black;
   height: 80px;
   font-weight: bold;
+}
+
+button {
+  border: none;
+  color: white;
+  background-color: #4056A1;
+  font-family: 'Bungee', 'sans-serif';
+}
+
+/* Desktop Viewing */
+@media (min-width: 1024px) {
+  .new-tweet {
+    margin-right: 3em;
+  }
+
+  #tweet-text {
+    width: 20em;
+  }
 }

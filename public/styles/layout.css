@@ -42,3 +42,13 @@ body {
   width: 750px;
   height: 75px;
 }
+
+/* Desktop Viewing */
+@media (min-width: 1024px) {
+
+  body {
+    display: flex;
+    margin-top: 10em;
+    justify-content: space-around;
+  }
+}

@@ -9,5 +9,14 @@
   background-image: url('../images/black-linen.png');
   color: aliceblue;
   position: relative;
+}
+
+/* Desktop Viewing */
+@media (min-width: 1024px) {
   
+  #avatar-header {
+    width: 20em;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
 }

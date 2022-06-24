@@ -1,5 +1,6 @@
+/* Classes  */
 .tweet {
-  width: 750px;
+  width: 20em;
 }
 
 .tweet:hover {
@@ -14,6 +15,23 @@
   margin-top: 30px;
 }
 
+.tweet-content {
+  border-top: null;
+  border-left: null;
+  border-right: null;
+  border-bottom: 5px solid black;
+  font-weight: bold;
+}
+
+.fa-solid {
+  color: black;
+}
+
+.tweet-container i:hover {
+  color: pink;
+}
+
+/* ID's */
 #header-div {
   display: flex;
   flex-direction: row;
@@ -26,12 +44,8 @@
   width: 100px;
 }
 
-.tweet-content {
-  border-top: null;
-  border-left: null;
-  border-right: null;
-  border-bottom: 5px solid black;
-  font-weight: bold;
+#posted-time {
+  margin: 2px;
 }
 
 footer {
@@ -39,15 +53,12 @@ footer {
   justify-content: space-between;
 }
 
-#posted-time {
-  margin: 2px;
+/* Desktop Viewing */
+@media (min-width: 1024px) {
+  .tweet-container {
+    width: 90%;
+  }
+  #tweet-data {
+    margin-right: 3em;
+  }
 }
-
-.fa-solid {
-  color: black;
-}
-
-.tweet-container i:hover {
-  color: pink;
-}
-

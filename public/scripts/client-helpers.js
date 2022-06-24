@@ -11,7 +11,7 @@ const errorMessage = function(text) {
   $('.tweet-container').prepend(slideDownErr).hide().slideDown();
 };
 
- // loads all tweets at bottom of page in reverse chronologically order
+// loads all tweets at bottom of page in reverse chronologically order
 const loadtweets = async function() {
   await $.ajax('/tweets', { method: 'GET' })
     .then(function(data) {
@@ -20,7 +20,7 @@ const loadtweets = async function() {
 };
 
 // renders the tweets in reverse chronological order
- const renderTweets = function(tweets) {
+const renderTweets = function(tweets) {
   $('#tweet-data').empty();
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);

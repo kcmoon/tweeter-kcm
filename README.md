@@ -14,6 +14,12 @@ This app was built using HTML, CSS, JS, jQuery and AJAX front-end skills, and by
 
 What are you waiting for? Follow the steps below and start "Tweeter-ing". Enjoy!
 
+## Screenshots
+
+!["Screenshot of the Desktop View"](https://github.com/kcmoon/tweeter-kcm/blob/master/docs/Tweeter-Desktop.png?raw=true)
+!["Screenshot of Post Form Hidden"](https://github.com/kcmoon/tweeter-kcm/blob/master/docs/Tweeter-Post-Hidden.png?raw=true)
+!["Screenshot of Visible Post Form"](https://github.com/kcmoon/tweeter-kcm/blob/master/docs/Tweeter-Post-Visible.png?raw=true)
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
